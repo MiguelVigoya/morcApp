@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/common/theme.dart';
 import 'core/presentation/change_notifier/auth_provider_state.dart';
 import 'core/presentation/pages/root_pages_provider.dart';
+import 'features/super_admin/presentation/changes_notifier/state_navigation_bar.dart';
 
 void main() {
   runApp(const MorcApp());
@@ -31,6 +32,8 @@ class MorcApp extends StatelessWidget {
                 create: (_) => StateAuth(sharedPreferences: snapshot.data!),),
               ChangeNotifierProvider(
                 create: (_) => DataFormLoginProvider(authRequest: authRequest),),
+              ChangeNotifierProvider(
+                  create: (_) => StateNavigationBar())
             ],
             child: MaterialApp(
               debugShowCheckedModeBanner: false,

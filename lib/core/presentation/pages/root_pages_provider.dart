@@ -41,7 +41,7 @@ class RootPagesWithProvider extends StatelessWidget {
         _redirectionTo(context, const DashboardHandleComplexHousing());
         break;
       case 'SUPER_ADMIN':
-        _redirectionTo(context, const DashboardSuperAdmin());
+        _redirectionTo(context, DashboardSuperAdmin());
         break;
     }
   }

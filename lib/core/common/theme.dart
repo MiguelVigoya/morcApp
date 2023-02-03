@@ -91,9 +91,9 @@ final ThemeData darkTheme = ThemeData(
   inputDecorationTheme: InputDecorationThemeHelper.decorationDarkMode,
   iconTheme: const IconThemeData(color: MorcColors.darkWhite,),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: MorcColors.dark,
-    selectedItemColor: MorcColors.darkWhite,
-    unselectedItemColor: MorcColors.darkWhite,
+    //backgroundColor: MorcColors.dark,
+    //selectedItemColor: MorcColors.darkWhite,
+    //unselectedItemColor: MorcColors.darkWhite,
   ),
   bottomAppBarColor: Colors.transparent, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MorcColors.darkWhite),
 );
