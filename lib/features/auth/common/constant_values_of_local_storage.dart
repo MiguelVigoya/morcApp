@@ -9,6 +9,7 @@
 }
 
  const String keyOfUserName = 'USER_NAME';
+const String keyOfUserId = 'USER_ID';
  const String keyOfToken = 'USER_TOKEN';
  const String keyOfEmail = 'USER_EMAIL';
  const String keyOfRole = 'USER_ROLE';

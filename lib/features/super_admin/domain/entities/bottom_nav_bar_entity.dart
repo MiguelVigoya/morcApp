@@ -1,14 +1,16 @@
 
+import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
 class BottomNavBarEntity {
   String artboard, stateMachineName, title, src;
+  final bool isDark;
   late SMIBool? input;
 
    BottomNavBarEntity(
-      {this.src = 'assets/rive_assets/icons.riv',
+      { required this.isDark,
         required this.artboard,
         required this.stateMachineName,
         required this.title,
-        this.input});
+        this.input,}) : src = isDark ? 'assets/rive_assets/dark_icon.riv' : 'assets/rive_assets/light_icons.riv';
 }

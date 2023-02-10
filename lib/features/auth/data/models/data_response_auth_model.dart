@@ -1,6 +1,6 @@
 import 'dart:convert';
+import '../../../residential_complex_housing/residential_complex_housing_models.dart';
 import '../../auth_entities.dart';
-import '../../auth_models.dart';
 
 class DataResponseAuthModel extends DataResponseAuth {
   @override
@@ -24,7 +24,7 @@ class DataResponseAuthModel extends DataResponseAuth {
   @override
   final List<String> roles;
   @override
-  final ComplexHousingModel? complexHousing;
+  final ResidentialComplexHousingModel? complexHousing;
 
   const DataResponseAuthModel(
     this.accessToken,
@@ -63,7 +63,7 @@ class DataResponseAuthModel extends DataResponseAuth {
     json["birth"],
     json["numberId"],
     json["roles"] = List<String>.from(json["roles"].map((x) => x)),
-    json["complexHousing"] == null ? null : ComplexHousingModel.fromMap(json["complexHousing"]),
+    json["complexHousing"] == null ? null : ResidentialComplexHousingModel.fromMap(json["complexHousing"]),
   );
 
   factory DataResponseAuthModel.fromJson(String str) => DataResponseAuthModel.fromMap(json.decode(str));

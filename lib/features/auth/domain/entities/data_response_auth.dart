@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import '../../../complex_housing/data/models/complex_housing_model.dart';
+
+import '../../../residential_complex_housing/residential_complex_housing_models.dart';
 
 class DataResponseAuth extends Equatable {
   final String accessToken;
@@ -12,7 +13,7 @@ class DataResponseAuth extends Equatable {
   final String? birth;
   final int? numberId;
   final List<String> roles;
-  final ComplexHousingModel? complexHousing;
+  final ResidentialComplexHousingModel? complexHousing;
 
   const DataResponseAuth({
     required this.accessToken,

@@ -6,6 +6,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../common/constant_values_of_local_storage.dart';
 import '../../domain/repositories/auth_local_data_source_interface.dart';
 
+/// TO IMPLEMENT THE METHODS OF THE [DataLoginFromLocalStorage] HAVE TO BE PASS THE INSTANCE
+/// OF THE SHARED PREFERENCES IN TO CONSTRUCTOR OF [DataLoginFromLocalStorage]
 class DataLoginFromLocalStorage implements AuthLocalDataSourceInterface {
 
   final SharedPreferences sharedPreferences;
@@ -16,6 +18,8 @@ class DataLoginFromLocalStorage implements AuthLocalDataSourceInterface {
   
   @override
   Future<void> deleteToken() async => await sharedPreferences.remove(keyOfToken);
+
+  //TODO: MANEJAR LOS RETORNOS DE LOS METODOS GET DONDE SEAN LLAMADOS Y NO EN ESTE SCOPE
 
   @override
   Future<bool> getIsDarkMode() async => sharedPreferences.getBool(keyOfIsDarkMode) ?? false;

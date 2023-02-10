@@ -16,6 +16,7 @@ class DataLoginFromApi implements LoginRemoteDataSourceInterface {
   @override
   Future<AuthResponseModel> login(AuthRequest loginRequest) async {
 
+    // TODO: change to use the local storage for the [AppPreferences] class static into Core module directory.
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     final DataLoginFromLocalStorage localStorage = DataLoginFromLocalStorage(sharedPreferences: sharedPreferences);
 
@@ -38,7 +39,7 @@ class DataLoginFromApi implements LoginRemoteDataSourceInterface {
 
     final Map<String, dynamic> decodeResponse = jsonDecode(response.body);
     if(response.statusCode == 200 || response.statusCode == 201) {
-      //TODO: create a model for user to save in local storage
+      //TODO: create a model for user to save in local storage - change the save to datastore
       localStorage.setToken(decodeResponse['data']['access_token']);
       localStorage.setRole(decodeResponse['data']['roles'][0]);
       localStorage.setUserName(decodeResponse['data']['username']);

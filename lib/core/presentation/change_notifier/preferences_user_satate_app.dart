@@ -6,17 +6,18 @@ import '../../../features/auth/data/data_sources/data_login_from_local_storage.d
 import '../../../features/auth/domain/repositories/auth_local_data_source_interface.dart';
 
 
-class StateAuth extends ChangeNotifier  implements AuthLocalDataSourceInterface{
+class PreferenceUserStateApp extends ChangeNotifier  implements AuthLocalDataSourceInterface{
   ///
   /// This is the state of the app. It is a [ChangeNotifier] so that it can notify
   /// its listeners when the state changes.
   /// need to instantiate the [SharedPreferences] object to use its notifier.
-  /// need to instantiate into constructor[StateAuth] the [DataLoginFromLocalStorage] object to use its notifier.
+  /// need to instantiate into constructor[PreferenceUserStateApp] the [DataLoginFromLocalStorage] object to use its notifier.
   ///
   final SharedPreferences sharedPreferences;
+  bool isDarkMode = true;
   late DataLoginFromLocalStorage localStorage;
 
-  StateAuth({required this.sharedPreferences}){
+  PreferenceUserStateApp({required this.sharedPreferences}){
     localStorage = DataLoginFromLocalStorage(sharedPreferences: sharedPreferences);
   }
 
@@ -35,6 +36,7 @@ class StateAuth extends ChangeNotifier  implements AuthLocalDataSourceInterface{
   @override
   Future<bool> getIsDarkMode() async {
     final isDark = await localStorage.getIsDarkMode();
+    isDarkMode ? isDark : !isDark;
     notifyListeners();
     return isDark;
   }

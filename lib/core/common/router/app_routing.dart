@@ -13,7 +13,7 @@ class AppRouting {
         const LoginPage(),
 
     Routes.dashBoardSuperAdmin: (_) =>
-        DashboardSuperAdmin(),
+        const DashboardSuperAdmin(),
 
     Routes.dashBoardHandleComplexHousing: (_) =>
         const DashboardHandleComplexHousing(),

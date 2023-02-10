@@ -16,10 +16,8 @@ class AuthRepositoryImplementationData implements AuthRepositoryInterface {
   Future<Either<Failure, AuthResponse>> login(AuthRequest loginRequest) async {
     try{
       final loginResponse = await dataLoginFromApi.login(loginRequest);
-      print('loginResponse: $loginResponse');
       return Right(loginResponse);
     }on ServerException {
-      print('object bad');
       return Left(ServerFailure());
     }
   }

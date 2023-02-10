@@ -1,9 +1,9 @@
 
 
 
-export 'package:clean_morc/features/handle_complex_housing/presentation/pages/handle_complex_housing_pages.dart';
+export 'package:clean_morc/features/handle_complex_housing/handle_complex_housing_pages.dart';
 export 'package:clean_morc/features/super_admin/presentation/pages/super_admin_pages.dart';
-export 'package:clean_morc/features/auth/presentation/pages/auth_pages.dart';
+export 'package:clean_morc/features/auth/auth_pages.dart';
 export 'package:clean_morc/core/presentation/pages/root_pages_provider.dart';
 
 

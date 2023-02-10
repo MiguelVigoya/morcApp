@@ -5,6 +5,16 @@ import '../../super_admin_entities.dart';
 
 class StateNavigationBar extends ChangeNotifier {
   BottomNavBarEntity _selectedBottomNav = bottomNAvs.first;
+  int _currentIndex = 0;
+
+  int get selectedPage => _currentIndex;
+
+  set selectedPage(int value) {
+    _currentIndex = value;
+    notifyListeners();
+  }
+
+  final PageController pageController = PageController(initialPage: 0);
 
   BottomNavBarEntity get selectedBottomNav => _selectedBottomNav;
   set selectedBottomNav( BottomNavBarEntity selectBottom ) {

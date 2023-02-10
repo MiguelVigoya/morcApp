@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/common/router/routes.dart';
-import '../../../../core/presentation/change_notifier/auth_provider_state.dart';
+import '../../../../core/presentation/change_notifier/preferences_user_satate_app.dart';
 
 class DashboardHandleComplexHousing extends StatelessWidget {
   const DashboardHandleComplexHousing({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final stateAuth = Provider.of<StateAuth>(context);
+    final stateAuth = Provider.of<PreferenceUserStateApp>(context);
 
     return  Scaffold(
       appBar: AppBar(

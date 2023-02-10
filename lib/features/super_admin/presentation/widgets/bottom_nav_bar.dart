@@ -19,7 +19,7 @@ class BottomNavBar extends StatelessWidget {
       width: 35,
       height: 35,
       child: Opacity(
-        opacity: isActive ? 1 : 0.5,
+        opacity: isActive ? 0.7 : 0.5,
         child: RiveAnimation.asset(
           bottomNAvs.first.src,
           artboard: selectedBottomNav.artboard,

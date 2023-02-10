@@ -9,7 +9,7 @@ class InputDecorationThemeHelper {
 
   static AppBarTheme fontAppBarLightMode = AppBarTheme(
 
-      color:  MorcColors.white,
+      color:  MorcColors.orange30,
 
       toolbarTextStyle: GoogleFonts.poppinsTextTheme().copyWith(
         headline6:const TextStyle(

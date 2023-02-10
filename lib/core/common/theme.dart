@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'ui_helpers/input_decoration_theme.dart';
 
 
+
 class MorcColors {
   static const purple = Color(0xFF5117AC);
   static const lightPurple = Color(0xFF6B4FAD);
@@ -64,7 +65,14 @@ final ThemeData lightTheme = ThemeData(
     selectedItemColor: MorcColors.purple,
     unselectedItemColor: MorcColors.lightGrey,
   ),
-  bottomAppBarColor: MorcColors.veryLightGrey, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MorcColors.lightPurple),
+  bottomAppBarColor: MorcColors.veryLightGrey,
+  colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MorcColors.lightPurple),
+  listTileTheme: const ListTileThemeData(
+    selectedColor: MorcColors.purple,
+    selectedTileColor: MorcColors.veryLightGrey,
+    iconColor: MorcColors.lightPurple,
+    tileColor: MorcColors.veryLightGrey,
+  ),
 );
 
 final ThemeData darkTheme = ThemeData(
@@ -91,11 +99,18 @@ final ThemeData darkTheme = ThemeData(
   inputDecorationTheme: InputDecorationThemeHelper.decorationDarkMode,
   iconTheme: const IconThemeData(color: MorcColors.darkWhite,),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    //backgroundColor: MorcColors.dark,
+    //backgroundColor: Colors.transparent,
     //selectedItemColor: MorcColors.darkWhite,
     //unselectedItemColor: MorcColors.darkWhite,
   ),
   bottomAppBarColor: Colors.transparent, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MorcColors.darkWhite),
+  listTileTheme: const ListTileThemeData(
+    iconColor: MorcColors.darkWhite,
+    tileColor: MorcColors.darkGrey,
+    selectedColor: MorcColors.darkWhite,
+    selectedTileColor: MorcColors.darkGrey,
+  )
+
 );
 
 final morcGradientColorApp = [
