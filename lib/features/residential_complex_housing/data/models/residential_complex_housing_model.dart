@@ -5,26 +5,27 @@ import '../../residential_complex_housing_entities.dart';
 
 class ResidentialComplexHousingModel extends ResidentialComplexHousingEntity {
   @override
-  final String name;
+  String name;
 
   @override
-  final String address;
+  String address;
+
+  @override
+  List<int> personIds;
+
 
   @override
   int? id;
-
-  @override
-  List<int>? personIds;
 
   @override
   bool? subscription;
 
 
    ResidentialComplexHousingModel({
-    required this.id,
+     this.id,
     required this.name,
     required this.address,
-    this.personIds,
+     required this.personIds,
     this.subscription,
 
   }) : super(
@@ -35,12 +36,12 @@ class ResidentialComplexHousingModel extends ResidentialComplexHousingEntity {
           subscription: subscription,
         );
 
-  factory ResidentialComplexHousingModel.fromMap(Map<String, dynamic> json) => ResidentialComplexHousingModel(
+factory ResidentialComplexHousingModel.fromMap(Map<String, dynamic> json) => ResidentialComplexHousingModel(
         id: json["id"],
         name: json["name"],
         address: json["address"],
-        personIds: json["personIds"],
         subscription: json["subscription"],
+        personIds: json["personIds"] == null ? [] : List<int>.from(json["personIds"].map((x) => x))
       );
 
   factory ResidentialComplexHousingModel.fromJson(String str) => ResidentialComplexHousingModel.fromMap(json.decode(str));
@@ -52,7 +53,7 @@ class ResidentialComplexHousingModel extends ResidentialComplexHousingEntity {
         "name": name,
         "address": address,
         "subscription": subscription,
-        "personIds": List<int>.from(personIds!.map((x) => x)),
+        "personIds": List<int>.from(personIds.map((x) => x)),
       };
 
     ResidentialComplexHousingModel copy() => ResidentialComplexHousingModel(

@@ -2,6 +2,6 @@
 export 'package:clean_morc/features/auth/domain/entities/data_response_auth.dart';
 export 'package:clean_morc/features/auth/domain/entities/auth_request.dart';
 export 'package:clean_morc/features/auth/domain/entities/auth_response.dart';
-export 'package:clean_morc/features/auth/domain/entities/user_entity.dart';
+export 'package:clean_morc/features/persons/domain/entities/user_entity.dart';
 
 

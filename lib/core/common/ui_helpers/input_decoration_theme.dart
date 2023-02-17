@@ -59,6 +59,7 @@ class InputDecorationThemeHelper {
   );
 
   static InputDecorationTheme decorationLightMode = InputDecorationTheme(
+    focusColor: MorcColors.purple,
     enabledBorder: const UnderlineInputBorder(
         borderSide: BorderSide(
       color: MorcColors.purple,
@@ -75,6 +76,7 @@ class InputDecorationThemeHelper {
   );
 
   static InputDecorationTheme decorationDarkMode =  InputDecorationTheme(
+    focusColor: MorcColors.darkGrey,
     fillColor: MorcColors.darkGrey,
     filled: true,
     enabledBorder: const UnderlineInputBorder(

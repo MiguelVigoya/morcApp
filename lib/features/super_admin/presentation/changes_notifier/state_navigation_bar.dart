@@ -6,6 +6,14 @@ import '../../super_admin_entities.dart';
 class StateNavigationBar extends ChangeNotifier {
   BottomNavBarEntity _selectedBottomNav = bottomNAvs.first;
   int _currentIndex = 0;
+  bool _isBarrierDismissible = false;
+
+  bool get isBarrierDismissible => _isBarrierDismissible;
+
+  set isBarrierDismissible(bool value) {
+    _isBarrierDismissible = value;
+    notifyListeners();
+  }
 
   int get selectedPage => _currentIndex;
 

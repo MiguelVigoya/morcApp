@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../domain/repositories/auth_repository_interface.dart';
+import '../../domain/repositories/login_remote_data_source_interface.dart';
 import '../data_sources/data_login_from_api.dart';
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
@@ -9,7 +10,7 @@ import '../../auth_entities.dart';
 
 class AuthRepositoryImplementationData implements AuthRepositoryInterface {
 
-  final DataLoginFromApi dataLoginFromApi;
+  final LoginRemoteDataSourceInterface dataLoginFromApi;
   AuthRepositoryImplementationData({required this.dataLoginFromApi});
 
   @override

@@ -1,22 +1,20 @@
 import 'package:equatable/equatable.dart';
 
-class ResidentialComplexHousingEntity extends Equatable{
-
-     ResidentialComplexHousingEntity({
+class ResidentialComplexHousingEntity extends Equatable {
+  ResidentialComplexHousingEntity({
     required this.name,
     required this.address,
-    this.id,
-    this.personIds,
+    required this.personIds,
     this.subscription,
+    this.id,
+  });
 
-   });
+  String name;
+  String address;
+  List<int> personIds;
+  int? id;
+  bool? subscription;
 
-   final String name;
-   final String address;
-     late final int? id;
-    late final List<int>? personIds;
-    late final bool? subscription;
-
-   @override
+  @override
   List<Object?> get props => [id, name, address, personIds, subscription];
 }

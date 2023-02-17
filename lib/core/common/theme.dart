@@ -28,6 +28,7 @@ class MorcColors {
   static const orange70 = Color(0xff9a3c05);
   static const orange90 = Color(0xff4c200b);
   static const veryLightOrange = Color(0xFFD7A477);
+  static const transparent = Color(0x00000000);
 }
 
 final morcGradientAccessColorAppBarLight = [
@@ -98,18 +99,20 @@ final ThemeData darkTheme = ThemeData(
   textTheme: InputDecorationThemeHelper.googleFontDarkMode,
   inputDecorationTheme: InputDecorationThemeHelper.decorationDarkMode,
   iconTheme: const IconThemeData(color: MorcColors.darkWhite,),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    //backgroundColor: Colors.transparent,
-    //selectedItemColor: MorcColors.darkWhite,
-    //unselectedItemColor: MorcColors.darkWhite,
-  ),
   bottomAppBarColor: Colors.transparent, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: MorcColors.darkWhite),
   listTileTheme: const ListTileThemeData(
     iconColor: MorcColors.darkWhite,
     tileColor: MorcColors.darkGrey,
     selectedColor: MorcColors.darkWhite,
     selectedTileColor: MorcColors.darkGrey,
-  )
+  ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: MorcColors.grey,
+    foregroundColor: MorcColors.darkWhite,
+      elevation: 10.9
+  ),
+
+
 
 );
 

@@ -1,3 +1,4 @@
+import 'package:clean_morc/features/residential_complex_housing/residential_complex_housing_entities.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../domain/repositories/residential_complex_housing_repository_interface.dart';
@@ -31,17 +32,17 @@ class ResidentialComplexHousingImplementationData implements ResidentialComplexH
 
   @override
   Future<Either<Failure, ResidentialComplexHousingModel>> createResidentialComplexHousing({
-    required ResidentialComplexHousingModel residentialComplexHousing,}) async {
-
+    required ResidentialComplexHousingEntity residentialComplexHousing,}) async {
 //TODO: BACKEND::::: CÓMO IDENTIFICAS QUE EL ID SEA EXCLUSIVAMENTE DE ADMINISTRADOR Y NO DE SUPER ADMINISTRADOR?????
-   try {
-     if(residentialComplexHousing.personIds!.isNotEmpty && _role == 'HANDLE_COMPLEX_HOUSING' && _id != 0) {
-        residentialComplexHousing.personIds!.add(_id);
-      }else if(residentialComplexHousing.personIds!.isEmpty && _role == 'SUPER_ADMIN' && _id != 0){
 
-       //TODO: IMPLEMENTAR SELECCIÓN DE PERSONAS CON ROL DE HANDLE_COMPLEX_HOUSING EN EL FRONTEND PARA SER AGREGADOS AL PERSONSIDS
-        residentialComplexHousing.personIds!.add(3);
-     }
+    print('ResidentialComplexHousingImplementationData residentialComplexHousing id: ${residentialComplexHousing.id}');
+    print(' ResidentialComplexHousingImplementationDataresidentialComplexHousing subscription: ${residentialComplexHousing.subscription}');
+
+    print(' ResidentialComplexHousingImplementationData residentialComplexHousing name: ${residentialComplexHousing.name}');
+    print('ResidentialComplexHousingImplementationData residentialComplexHousing address: ${residentialComplexHousing.address}');
+    print('ResidentialComplexHousingImplementationData residentialComplexHousing personIds: ${residentialComplexHousing.personIds}');
+
+   try {
      final ResidentialComplexHousingModel residentialComplexHousingResponse = await remoteDataSourceApi.createResidentialComplexHousing(residentialComplexHousing: residentialComplexHousing, userToken: _token);
      return Right(residentialComplexHousingResponse);
    } on ServerException {
